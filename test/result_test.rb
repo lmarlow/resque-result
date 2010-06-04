@@ -15,6 +15,10 @@ class ResultTest < Test::Unit::TestCase
     Resque.redis.flushall
   end
 
+  def test_result_version
+    assert_equal '1.0.0', Resque::Plugins::Result::Version
+  end
+
   def test_lint
     assert_nothing_raised do
       Resque::Plugin.lint(Resque::Plugins::Result)
@@ -24,7 +28,7 @@ class ResultTest < Test::Unit::TestCase
   def test_resque_version
     major, minor, patch = Resque::Version.split('.')
     assert_equal 1, major.to_i
-    assert minor.to_i >= 8
+    assert minor.to_i >= 9
   end
 
   def test_processed_job

@@ -1,6 +1,8 @@
+require 'lib/resque/plugins/result/version'
+
 Gem::Specification.new do |s|
   s.name              = "resque-result"
-  s.version           = "0.1.0"
+  s.version           = Resque::Plugins::Result::Version
   s.date              = Time.now.strftime('%Y-%m-%d')
   s.summary           = "A Resque plugin for retrieving a job's return value."
   s.homepage          = "http://github.com/lmarlow/resque-result"
@@ -40,8 +42,10 @@ desc
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    s.add_runtime_dependency('resque-meta', ["~> 0.1.0"])
+    s.add_runtime_dependency('resque', [">= 1.9.0"])
+    s.add_runtime_dependency('resque-meta', [">= 1.0.0"])
   else
-    s.add_dependency('resque-meta', ["~> 0.1.0"])
+    s.add_dependency('resque', [">= 1.9.0"])
+    s.add_dependency('resque-meta', [">= 1.0.0"])
   end
 end

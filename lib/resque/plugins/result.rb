@@ -1,3 +1,5 @@
+require 'resque'
+require 'resque/plugins/result/version'
 require 'resque/plugins/meta'
 
 module Resque

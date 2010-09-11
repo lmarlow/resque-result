@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/test_helper'
-require 'resque/plugins/result'
+require 'resque-result'
 
 class ResultJob
   extend Resque::Plugins::Result

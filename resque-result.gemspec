@@ -20,6 +20,8 @@ job's perform method.  Results will be encoded using JSON.
 
   For example:
 
+      require 'resque-result'
+
       class MyJob
         extend Resque::Plugins::Result
 

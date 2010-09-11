@@ -36,3 +36,12 @@ rescue LoadError
   warn "mg not available."
   warn "Install it with: gem i mg"
 end
+
+desc "Tag and publish a new version to Rubygems"
+task :publish => [ :test, 'gem:publish' ] do
+  require 'lib/resque/plugins/result/version'
+
+  sh ["git tag v#{Resque::Plugins::Result::Version}",
+      "git push origin v#{Resque::Plugins::Result::Version}",
+      "git push origin master"].join(' && ')
+end

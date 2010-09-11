@@ -44,10 +44,10 @@ desc
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    s.add_runtime_dependency('resque', [">= 1.9.0"])
-    s.add_runtime_dependency('resque-meta', [">= 1.0.0"])
+    s.add_runtime_dependency('resque', ["~> 1.9"])
+    s.add_runtime_dependency('resque-meta', ["~> 1.0"])
   else
-    s.add_dependency('resque', [">= 1.9.0"])
-    s.add_dependency('resque-meta', [">= 1.0.0"])
+    s.add_dependency('resque', ["~> 1.9"])
+    s.add_dependency('resque-meta', ["~> 1.0"])
   end
 end

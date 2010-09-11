@@ -10,7 +10,7 @@ module Resque
     # For example:
     # 
     #     class MyJob
-    #       extend Resque::Jobs::Result
+    #       extend Resque::Plugins::Result
     # 
     #       def self.perform(meta_id, big_num)
     #         factor(big_num)
